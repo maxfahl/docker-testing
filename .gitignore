@@ -1,0 +1,14 @@
+node_modules
+
+/.cache
+/build
+/public/build
+.env
+.nvmrc
+.npmrc
+
+# Workspace
+.idea
+
+# Derrived
+/app/styles/app.css
