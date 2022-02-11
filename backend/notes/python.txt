@@ -4,9 +4,12 @@ Start server: python manage.py runserver
 
 Django admin: PYTHONPATH=/Users/maxfahl/Fahl/Private/Code/connect/backend DJANGO_SETTINGS_MODULE=server.settings django-admin
 
+Make migrations: python manage.py makemigrations
 Migrate DB: python manage.py migrate
+Rollback migration: python manage.py migrate APP XXXX_PREV_COMMIT
 
 Switch to Postgres 10: brew link postgresql@10
 
+Add app: python manage.py startapp APPNAME
 
 /admin = maxfahl/a2...

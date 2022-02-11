@@ -1,0 +1,34 @@
+[
+	{
+		"model": "api.request",
+		"pk": 1,
+		"fields": {
+			"title": "Testing",
+			"description": "Stutter calmly like a scrawny plunder. Everyone loves the aroma of apple cheesecake varnished with sticky mustard."
+		}
+	},
+	{
+		"model": "api.request",
+		"pk": 2,
+		"fields": {
+			"title": "Milk",
+			"description": "Arrr, yer not commanding me without an adventure!"
+		}
+	},
+	{
+		"model": "api.request",
+		"pk": 3,
+		"fields": {
+			"title": "Beef",
+			"description": "I gather this sonic shower, it's called unrelated ionic cannon."
+		}
+	},
+	{
+		"model": "api.request",
+		"pk": 4,
+		"fields": {
+			"title": "Chicken",
+			"description": "The pit is full of shame."
+		}
+	}
+]
