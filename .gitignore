@@ -8,7 +8,7 @@ node_modules
 .npmrc
 
 # Workspace
-.idea
+.idea/workspace.xml
 
 # Derrived
 /app/styles/app.css
