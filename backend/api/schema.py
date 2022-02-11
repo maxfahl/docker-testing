@@ -1,26 +1,22 @@
-import graphene
+from graphene import relay, ObjectType, List, Schema
 from graphene_django import DjangoObjectType
+from graphene_django.filter import DjangoFilterConnectionField
+
 from api.models import Request
 
 
-class RequestType(DjangoObjectType):
+class RequestNode(DjangoObjectType):
     class Meta:
         model = Request
-        fields = ("id", "title", "description")
+        filter_fields = {
+            "title": ['exact', 'icontains', 'istartswith']
+        }
+        interfaces = (relay.Node, )
 
 
-class Query(graphene.ObjectType):
-    all_requests = graphene.List(RequestType)
-    # category_by_name = graphene.Field(CategoryType, name=graphene.String(required=True))
-
-    def resolve_all_requests(self, info):
-        return Request.objects.all()
-
-    # def resolve_category_by_name(root, info, name):
-    #     try:
-    #         return Category.objects.get(name=name)
-    #     except Category.DoesNotExist:
-    #         return None
+class Query(ObjectType):
+    request = relay.Node.Field(RequestNode)
+    all_requests = DjangoFilterConnectionField(RequestNode)
 
 
-schema = graphene.Schema(query=Query)
+schema = Schema(query=Query)
