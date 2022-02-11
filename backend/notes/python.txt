@@ -1,0 +1,12 @@
+Start virtual env: source env/bin/activate
+
+Start server: python manage.py runserver
+
+Django admin: PYTHONPATH=/Users/maxfahl/Fahl/Private/Code/connect/backend DJANGO_SETTINGS_MODULE=server.settings django-admin
+
+Migrate DB: python manage.py migrate
+
+Switch to Postgres 10: brew link postgresql@10
+
+
+/admin = maxfahl/a2...
