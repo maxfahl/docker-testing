@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "graphene_django",
 
     'api'
 ]
@@ -80,7 +81,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'connect',
         'USER': 'postgres',
-        # 'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432'
     }
@@ -104,6 +104,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+GRAPHENE = {
+    "SCHEMA": "api.schema.schema"
+}
 
 
 # Internationalization
