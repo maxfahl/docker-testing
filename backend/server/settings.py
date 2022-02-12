@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 GRAPHENE = {
-    "SCHEMA": "backend.schema.schema"
+    "SCHEMA": "server.schema.schema"
 }
 
 
