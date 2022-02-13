@@ -3,20 +3,18 @@ version: "3.9"
 services:
   db:
     image: postgres
-    volumes:
-      - ./backend/docker/data/db:/var/lib/postgresql/data
     environment:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  web:
+  backend:
     build: ./backend
     command: bash -c "
       python manage.py migrate &&
       python manage.py runserver 0.0.0.0:8000
       "
     volumes:
-      - ./backend:/code
+      - ./backend:/backend
     ports:
       - "8000:8000"
     environment:
@@ -25,3 +23,11 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+  remix:
+    build: ./remix
+    command: yarn dev
+    volumes:
+      - ./remix:/remix
+    ports:
+      - "3000:3000"
+

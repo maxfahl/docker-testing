@@ -13,3 +13,7 @@ Switch to Postgres 10: brew link postgresql@10
 Add app: python manage.py startapp APPNAME
 
 /admin = maxfahl/a2...
+
+
+
+Enter image shell: docker exec -it <container name> /bin/bash
