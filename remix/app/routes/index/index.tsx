@@ -1,20 +1,20 @@
 import { Link, useLoaderData } from '@remix-run/react'
-import { getPosts, Post } from '~/api/post'
+import { getRequests, Request } from '~/api/request'
 
 export const loader = async () => {
-  return getPosts()
+  return getRequests()
 }
 
 export default function Posts() {
-  const posts = useLoaderData<Post[]>()
+  const requests = useLoaderData<Request[]>()
 
   return (
     <div className="prose">
       <h1>Posts</h1>
       <ul>
-        {posts.map((post: Post) => (
-          <li key={post.slug}>
-            <Link to={post.slug}>{post.title}</Link>
+        {requests.map((request: Request) => (
+          <li key={request.id}>
+            <Link to={request.title}>{request.title}</Link>
           </li>
         ))}
       </ul>

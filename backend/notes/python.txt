@@ -10,6 +10,8 @@ Rollback migration: python manage.py migrate APP XXXX_PREV_COMMIT
 
 Switch to Postgres 10: brew link postgresql@10
 
+Seed data: python manage.py loaddata MODULE_NAME
+
 Add app: python manage.py startapp APPNAME
 
 /admin = maxfahl/a2...
